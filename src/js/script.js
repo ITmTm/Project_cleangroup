@@ -1,10 +1,10 @@
 "use strict";
 
-let time = 7000; //ms
+let time = 9000; //ms
 let step = 5;
 
 function  outNum(num, elem) {
-    let l = document.querySelector("#" + elem);
+    let numberBox = document.querySelector("#" + elem);
     let n = 0;
     let t = Math.round(time / (num / step));
     let interval = setInterval(() => {
@@ -12,7 +12,7 @@ function  outNum(num, elem) {
         if (n >= num) {
             clearInterval(interval);
         } else {
-            l.innerHTML = n;
+            numberBox.innerHTML = n;
         }
     }, t);
 }
