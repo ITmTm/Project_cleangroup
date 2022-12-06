@@ -6,6 +6,10 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 				<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+				<link
+								rel="stylesheet"
+								href="https://unpkg.com/img-comparison-slider@7/dist/styles.css"
+				/>
         <link rel="stylesheet" href="css/style.min.css">
     <title>Cleangroup</title>
     </head>
@@ -177,59 +181,35 @@
 										</div>
                 </div>
                 <div class="work__wrapper">
-                    <div class="work__block">
-                        <div class="work__slider">
-                            <div id="juxtapose-wrapper" class="juxtapose" data-startingposition="50%" data-showlabels="true" data-showcredits="true" data-animate="true" style="margin: 0 auto">
-                                <img src="image/slider/before.jpg" alt="before" data-credits="credits 1" />
-                                <img src="image/slider/after.jpg" alt="after" data-credits="credits 2" />
-                            </div>
-                        </div>
-                    </div>
+										<img-comparison-slider class="rendered">
+												<img slot="first" src="image/slider/before.jpg" alt="before" />
+												<img slot="second" src="image/slider/after.jpg" alt="after" />
+										</img-comparison-slider>
 
-                    <div class="work__block">
-                        <div class="work__slider">
-                            <div id="juxtapose-wrapper2" class="juxtapose" data-startingposition="50%" data-showlabels="true" data-showcredits="true" data-animate="true" style="margin: 0 auto">
-                                <img src="image/slider/before2.jpg" alt="before" data-credits="credits 1" />
-                                <img src="image/slider/after2.jpg" alt="after" data-credits="credits 2" />
-                            </div>
-                        </div>
-                    </div>
+										<img-comparison-slider>
+												<img slot="first" src="image/slider/before3.jpg" alt="before" />
+												<img slot="second" src="image/slider/after3.jpg" alt="after" />
+										</img-comparison-slider>
 
-                    <div class="work__block">
-                        <div class="work__slider">
-                            <div id="juxtapose-wrapper3" class="juxtapose" data-startingposition="50%" data-showlabels="true" data-showcredits="true" data-animate="true" style="margin: 0 auto">
-                                <img src="image/slider/before3.jpg" alt="before" data-credits="credits 1" />
-                                <img src="image/slider/after3.jpg" alt="after" data-credits="credits 2" />
-                            </div>
-                        </div>
-                    </div>
+										<img-comparison-slider>
+												<img slot="first" src="image/slider/before5.jpg" alt="before" />
+												<img slot="second" src="image/slider/after5.jpg" alt="after" />
+										</img-comparison-slider>
 
-                    <div class="work__block">
-                        <div class="work__slider">
-                            <div id="juxtapose-wrapper4" class="juxtapose" data-startingposition="50%" data-showlabels="true" data-showcredits="true" data-animate="true" style="margin: 0 auto">
-                                <img src="image/slider/before4.jpg" alt="before" data-credits="credits 1" />
-                                <img src="image/slider/after4.jpg" alt="after" data-credits="credits 2" />
-                            </div>
-                        </div>
-                    </div>
+										<img-comparison-slider>
+												<img slot="first" src="image/slider/before2.jpg" alt="before" />
+												<img slot="second" src="image/slider/after2.jpg" alt="after" />
+										</img-comparison-slider>
 
-                    <div class="work__block">
-                        <div class="work__slider">
-                            <div id="juxtapose-wrapper5" class="juxtapose" data-startingposition="50%" data-showlabels="true" data-showcredits="true" data-animate="true" style="margin: 0 auto">
-                                <img src="image/slider/before5.jpg" alt="before" data-credits="credits 1" />
-                                <img src="image/slider/after5.jpg" alt="after" data-credits="credits 2" />
-                            </div>
-                        </div>
-                    </div>
+										<img-comparison-slider>
+												<img slot="first" src="image/slider/before4.jpg" alt="before" />
+												<img slot="second" src="image/slider/after4.jpg" alt="after" />
+										</img-comparison-slider>
 
-                    <div class="work__block">
-                        <div class="work__slider">
-                            <div id="juxtapose-wrapper6" class="juxtapose" data-startingposition="50%" data-showlabels="true" data-showcredits="true" data-animate="true" style="margin: 0 auto">
-                                <img src="image/slider/before6.jpg" alt="before" data-credits="credits 1" />
-                                <img src="image/slider/after6.jpg" alt="after" data-credits="credits 2" />
-                            </div>
-                        </div>
-                    </div>
+										<img-comparison-slider>
+												<img slot="first" src="image/slider/before6.jpg" alt="before" />
+												<img slot="second" src="image/slider/after6.jpg" alt="after" />
+										</img-comparison-slider>
                 </div>
             </div>
         </section>
@@ -523,6 +503,10 @@
 																				<a href="">
 																						<img src="icons/social/instagram.svg" alt="">
 																				</a>
+
+																				<a href="">
+																						<img src="icons/social/mail.svg" alt="">
+																				</a>
 																		</p>
 																</div>
 																<div class="footer__action">
@@ -535,7 +519,7 @@
 						</div>
 				</footer>
 
-    <script defer src="js/juxtapose.min.js"></script>
+    <script defer src="js/juxtapose.min.js"></script><script defer src="https://unpkg.com/img-comparison-slider@7/dist/index.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="js/script.js"></script>
     </body>
