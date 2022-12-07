@@ -535,7 +535,30 @@
 				</footer>
 
 				<div class="popup">
-
+						<div class="popup__wrapper">
+								<div class="popup__close"></div>
+								<div class="popup__title">Оставить заявку</div>
+								<form action="#">
+										<div class="modal__form">
+												<input type="hidden" name="name form" value="">
+												<div class="field">
+														<div class="field__title">Введите имя</div>
+														<div class="field__descr"></div>
+														<div class="field__input field_input_text">
+																<input required placeholder="Ваше имя" name="name" type="text" autocomplete="off">
+														</div>
+												</div>
+												<div class="field">
+														<div class="field__title">Введите номер телефона</div>
+														<div class="field__descr">Наш менеджер Вам перезвонит</div>
+														<div class="field__input field_input_phone">
+																<input required placeholder="xxxx-xxxx-xxxx" name="phone" type="text" autocomplete="off">
+														</div>
+												</div>
+												<button class="modal__btn">Оставить заявку</button>
+										</div>
+								</form>
+						</div>
 				</div>
 		<script defer src="https://unpkg.com/img-comparison-slider@7/dist/index.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
