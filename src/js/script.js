@@ -139,6 +139,25 @@ document.addEventListener('keydown', (e) => {
 	}
 });
 
+		// Scroll and pageup
+// window.addEventListener('scroll', () => {
+// 	const scrollElem = document.querySelector('.pageup');
+// 	if (document.body.scrollTop >= 1600) {
+// 		scrollElem.style.opacity = '1';
+// 	} else {
+// 		scrollElem.style.opacity = '';
+// 	}
+// });
+
+
+window.addEventListener('scroll', () => {
+	const scrollElem = document.querySelector('.pageup');
+	if (this.scrollY > 1600) {
+		scrollElem.style.display = 'block';
+	} else {
+		scrollElem.style.display = 'none';
+	}
+});
 
 
 
