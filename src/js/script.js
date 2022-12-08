@@ -22,7 +22,6 @@ outNum(320, 'out-2');
 outNum(190, 'out-3');
 
 
-
         //  Timer
 const deadline = '2023-01-30';
 
@@ -139,6 +138,7 @@ document.addEventListener('keydown', (e) => {
 		closeModal();
 	}
 });
+
 
 
 
