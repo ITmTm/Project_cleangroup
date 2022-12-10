@@ -1,6 +1,6 @@
 "use strict";
 
-let time = 10000; //ms
+let time = 15000; //ms
 let step = 5;
 
 function  outNum(num, elem) {
@@ -84,6 +84,7 @@ function setClock(selector, endtime) {
 
 setClock('.timer', deadline);
 
+			// Swiper
 
 const swiper = new Swiper('.swiper-container', {
 	grabCursor: true,
@@ -139,7 +140,47 @@ document.addEventListener('keydown', (e) => {
 	}
 });
 
+		// Mask
+
+let selector = document.querySelector('#phone');
+let im = new Inputmask('+7 (999) 999 - 99 - 99');
+im.mask(selector);
+
+
+
+
+document.querySelector('form button').addEventListener('click', () => {
+	let name = document.querySelector('#name');
+	if (name.value.trim() == '') {
+		setErrorFor(name, 'Введите имя')
+	} else  {
+		setSuccessFor(name)
+	}
+	let phone = document.querySelector('#phone')
+	if (phone.value.trim() == '') {
+		setErrorFor(phone,'Введите номер')
+	} else {
+		setSuccessFor(phone)
+	}
+
+});
+
+function setErrorFor(input,phone) {
+	input.nextElementSibling.innerHTML = phone;
+	input.style.borderColor = '#dee845';
+	input.parentElement.querySelector('.fa-exclamation-circle').style.visibility='visible';
+	input.parentElement.querySelector('.fa-check-circle').style.visibility='visible'
+}
+function setSuccessFor(input) {
+	input.style.borderColor = 'rgba(218,60,60,0.8)';
+	input.parentElement.querySelector('.fa-check-circle').style.visibility='visible'
+	input.parentElement.querySelector('.fa-exclamation-circle').style.visibility='hidden';
+	input.nextElementSibling.innerHTML = "";
+}
+
+
 		// Scroll and pageup
+
 window.addEventListener('scroll', () => {
 	const scrollElem = document.querySelector('.pageup');
 	if (scrollY > 1600) {
