@@ -23,7 +23,7 @@ outNum(190, 'out-3');
 
 
         //  Timer
-const deadline = '2023-01-30';
+const deadline = '2023-01-20';
 
 function getTimeRemaining(runtime) {
 	let days, hours, minutes, seconds;
