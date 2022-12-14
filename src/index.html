@@ -561,7 +561,7 @@
 														<div class="field__title">Введите имя</div>
 														<div class="field__descr"></div>
 														<div class="field__input field_input_text">
-																<input id="name"  placeholder="Ваше имя" name="name" type="text" autocomplete="off">
+																<input id="name" required  placeholder="Ваше имя" name="name" type="text" autocomplete="off" pattern="[A-Za-zА-Яа-яЁё]+">
 																<i class="fas fa-check-circle"></i>
 																<i class="fas fa-exclamation-circle"></i>
 														</div>
@@ -570,7 +570,7 @@
 														<div class="field__title">Введите номер телефона</div>
 														<div class="field__descr">Наш менеджер Вам перезвонит</div>
 														<div class="field__input field_input_phone">
-																<input id="phone" required placeholder="xxxx-xxxx-xxxx" name="phone" type="text" autocomplete="off">
+																<input id="phone" required placeholder="xxxx-xxxx-xxxx" name="phone" type="text" autocomplete="off" pattern="\+?[0-9\s\-\(\)]+">
 																<i class="fas fa-check-circle"></i>
 																<i class="fas fa-exclamation-circle"></i>
 														</div>
