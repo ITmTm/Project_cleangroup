@@ -25,9 +25,9 @@ outNum(190, 'out-3');
         //  Timer
 const deadline = '2023-01-30';
 
-function getTimeRemaining(endtime) {
+function getTimeRemaining(runtime) {
 	let days, hours, minutes, seconds;
-	const t = Date.parse(endtime) - Date.parse(new Date());
+	const t = Date.parse(runtime) - Date.parse(new Date());
 
 	if (t <= 0) {
 		days = 0;
@@ -58,7 +58,7 @@ function getZero(num) {
 	}
 }
 
-function setClock(selector, endtime) {
+function setClock(selector, runtime) {
 	const timer = document.querySelector(selector),
 		days = timer.querySelector('#days'),
 		hours = timer.querySelector('#hours'),
@@ -69,7 +69,7 @@ function setClock(selector, endtime) {
 	updateClock();
 
 	function updateClock() {
-		const t = getTimeRemaining(endtime);
+		const t = getTimeRemaining(runtime);
 
 		days.innerHTML = getZero(t.days);
 		hours.innerHTML = getZero(t.hours);
@@ -136,7 +136,7 @@ modalTrigger.forEach(btn => {
 
 
 modal.addEventListener('click', (e) => {
-	if (e.target === modal || e.target.getAttribute('data-close') ) {
+	if (e.target === modal || e.target.getAttribute('data-close') === '') {
 		closeModal();
 	}
 });
@@ -150,15 +150,15 @@ document.addEventListener('keydown', (e) => {
 
 		// Validation
 
-document.querySelector('form button').addEventListener('click', () => {
+document.querySelector('.modal__btn').addEventListener('click', () => {
 	let name = document.querySelector('#name');
-	if (name.value.trim() == '') {
+	if (name.value.trim() === '') {
 		setErrorFor(name, 'Введите имя')
 	} else  {
 		setSuccessFor(name)
 	}
 	let phone = document.querySelector('#phone')
-	if (phone.value.trim() == '') {
+	if (phone.value.trim() === '') {
 		setErrorFor(phone,'Введите номер')
 	} else {
 		setSuccessFor(phone)
