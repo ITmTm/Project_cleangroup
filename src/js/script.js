@@ -147,7 +147,7 @@ let im = new Inputmask('+7 (999) 999 - 99 - 99');
 im.mask(selector);
 
 
-
+		// Validation
 
 document.querySelector('form button').addEventListener('click', () => {
 	let name = document.querySelector('#name');
