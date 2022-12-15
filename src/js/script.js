@@ -273,5 +273,13 @@ window.addEventListener('DOMContentLoaded', () => {
 
 	// Cookie
 
+const storageType = localStorage,
+	consentPropertyType = 'site_consent';
 
+	const shouldShowCookie = () => !storageType.getItem(consentPropertyType);
+	const saveToStorage = () => storageType.setItem(consentPropertyType, true);
+
+	if (shouldShowCookie()) {
+		const consent = confirm('Yes');
+	}
 })
