@@ -273,48 +273,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
 	// Cookie
 
-	// const cookieStorage = {
-	// 	getItem: (key) => {
-	// 		const cookies = document.cookie
-	// 							.split(';')
-	// 						   	.map(cookie => cookie.split('='))
-	// 						   	.reduce((acc, [key, value]) => ({...acc,
-	// 															[key.trim()] : value}), {});
-	//
-	// 		return cookies[key];
-	// 	},
-	// 	setItem: (key, value) => {
-	// 		document.cookie = `${key}=${value};expires=Sun, 30 Dec 2023 12:00:00 GMT`;
-	// 	}
-	// };
-	//
-	// const storageType = cookieStorage;
-	// const consentPropertyType = 'site_consent';
-	//
-	// const hasConsented = () => storageType.getItem(consentPropertyType) === 'true' ? true : false;
-	// const toggleStorage = (prop) => storageType.setItem(consentPropertyType, prop);
-	//
-	// const cookies = document.querySelector('.cookies'),
-	// 	btnAccept = document.querySelector('[data-accept]'),
-	// 	btnCancel = document.querySelector('[data-cancel]');
-	//
-	// if (hasConsented()) {
-	// 	console.log('Loading...');
-	// } else {
-	// 	cookies.classList.add('cookies_active');
-	// }
-	//
-	// btnAccept.addEventListener('click' , () => {
-	// 	toggleStorage(true);
-	// 	cookies.classList.remove('cookies_active');
-	// 	console.log('Loading...');
-	// });
-	//
-	// btnCancel.addEventListener('click' , () => {
-	// 	toggleStorage(false);
-	// 	cookies.classList.remove('cookies_active');
-	// });
-
 	class CookieConsent {
 		constructor({cookiesPopup, btnAccept, btnCancel, activeClass = ''} = {}) {
 			this.cookiesPopup = document.querySelector(cookiesPopup);
@@ -349,6 +307,49 @@ window.addEventListener('DOMContentLoaded', () => {
 
 		changeStatus = (prop) => {
 			this.setItem(this.consentPropertyType, prop);
+			if (this.hasConsented()) {
+				// Подписка метрик
+				myScripts();
+			} else {
+
+			}
 		}
+
+		bindTriggers = () => {
+			this.btnAccept.addEventListener('click' , () => {
+				this.changeStatus(true);
+				this.cookiesPopup.classList.remove(this.activeClass);
+			});
+
+			this.btnCancel.addEventListener('click' , () => {
+				this.changeStatus(false);
+				this.cookiesPopup.classList.remove(this.activeClass);
+			});
+		}
+
+		init = () => {
+			try {
+				if (this.hasConsented()) {
+					myScripts();
+				} else {
+					this.cookiesPopup.classList.add(this.activeClass);
+				}
+
+				this.bindTriggers();
+			} catch (e) {
+				console.error('Переданы не все данные');
+			}
+		}
+	}
+
+	new CookieConsent({
+		activeClass: 'cookies_active',
+		cookiesPopup: '.cookies',
+		btnAccept: '[data-accept]',
+		btnCancel: '[data-cancel]'
+	}).init();
+
+	function myScripts() {
+		console.log('Loading....');
 	}
 });
