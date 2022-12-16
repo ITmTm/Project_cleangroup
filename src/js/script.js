@@ -273,13 +273,82 @@ window.addEventListener('DOMContentLoaded', () => {
 
 	// Cookie
 
-const storageType = localStorage,
-	consentPropertyType = 'site_consent';
+	// const cookieStorage = {
+	// 	getItem: (key) => {
+	// 		const cookies = document.cookie
+	// 							.split(';')
+	// 						   	.map(cookie => cookie.split('='))
+	// 						   	.reduce((acc, [key, value]) => ({...acc,
+	// 															[key.trim()] : value}), {});
+	//
+	// 		return cookies[key];
+	// 	},
+	// 	setItem: (key, value) => {
+	// 		document.cookie = `${key}=${value};expires=Sun, 30 Dec 2023 12:00:00 GMT`;
+	// 	}
+	// };
+	//
+	// const storageType = cookieStorage;
+	// const consentPropertyType = 'site_consent';
+	//
+	// const hasConsented = () => storageType.getItem(consentPropertyType) === 'true' ? true : false;
+	// const toggleStorage = (prop) => storageType.setItem(consentPropertyType, prop);
+	//
+	// const cookies = document.querySelector('.cookies'),
+	// 	btnAccept = document.querySelector('[data-accept]'),
+	// 	btnCancel = document.querySelector('[data-cancel]');
+	//
+	// if (hasConsented()) {
+	// 	console.log('Loading...');
+	// } else {
+	// 	cookies.classList.add('cookies_active');
+	// }
+	//
+	// btnAccept.addEventListener('click' , () => {
+	// 	toggleStorage(true);
+	// 	cookies.classList.remove('cookies_active');
+	// 	console.log('Loading...');
+	// });
+	//
+	// btnCancel.addEventListener('click' , () => {
+	// 	toggleStorage(false);
+	// 	cookies.classList.remove('cookies_active');
+	// });
 
-	const shouldShowCookie = () => !storageType.getItem(consentPropertyType);
-	const saveToStorage = () => storageType.setItem(consentPropertyType, true);
+	class CookieConsent {
+		constructor({cookiesPopup, btnAccept, btnCancel, activeClass = ''} = {}) {
+			this.cookiesPopup = document.querySelector(cookiesPopup);
+			this.btnAccept = document.querySelector(btnAccept);
+			this.btnCancel = document.querySelector(btnCancel);
+			this.activeClass = activeClass;
+			this.consentPropertyType = 'site_consent';
+		}
 
-	if (shouldShowCookie()) {
-		const consent = confirm('Yes');
+		getItem = (key) => {
+			const cookies = document.cookie
+								.split(';')
+								.map(cookie => cookie.split('='))
+								.reduce((acc, [key, value]) => ({...acc,
+																[key.trim()] : value}), {});
+
+			return cookies[key];
+		}
+
+		setItem = (key, value) => {
+			document.cookie = `${key}=${value};expires=Sun, 30 Dec 2023 12:00:00 GMT`;
+		}
+
+		hasConsented = () => {
+			if (this.getItem(this.consentPropertyType) === 'true') {
+				return true;
+			} else {
+				return false;
+			}
+			// storageType.getItem(consentPropertyType) === 'true' ? true : false;
+		}
+
+		changeStatus = (prop) => {
+			this.setItem(this.consentPropertyType, prop);
+		}
 	}
-})
+});
