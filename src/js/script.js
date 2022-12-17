@@ -202,9 +202,21 @@ window.addEventListener('DOMContentLoaded', () => {
 		failure: 'Что-то пошло не так...'
 	};
 
-	postData(form);
+	bindPostData(form);
 
-	function  postData(form) {
+	const postData = async (url, data) => {
+		let res = await fetch(url, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: data
+		});
+
+		return await res.json();
+	};
+
+	function  bindPostData(form) {
 		form.addEventListener('submit', (e) => {
 			e.preventDefault();
 
@@ -225,14 +237,15 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 			axios.post('server.php', json, postData)
-				.then(() => {
-					showThanksModal(message.success);
-					statusMessage.remove();
-				}).catch(()=> {
+			.then(() => {
+				showThanksModal(message.success);
+				statusMessage.remove();
+			}).catch(()=> {
 				showThanksModal(message.failure);
 			}).finally(() => {
 				form.reset();
 			});
+		})
 	}
 
 	function showThanksModal(message) {
