@@ -221,29 +221,18 @@ window.addEventListener('DOMContentLoaded', () => {
 
 			const formData = new FormData(form);
 
-			const object = {};
+			const json = JSON.stringify(Object.fromEntries(formData.entries()));
 
-			formData.forEach(function (value, key) {
-				object[key] = value;
-			});
 
-			fetch('server.php', {
-				method: 'POST',
-				headers: {
-					'Content-type': 'application/json'
-				},
-				body: JSON.stringify(object)
-
-			}).then(data => data.text())
+			axios.post('server.php', json, postData)
 				.then(() => {
 					showThanksModal(message.success);
 					statusMessage.remove();
-				}).catch(() => {
+				}).catch(()=> {
 				showThanksModal(message.failure);
 			}).finally(() => {
 				form.reset();
 			});
-		});
 	}
 
 	function showThanksModal(message) {
