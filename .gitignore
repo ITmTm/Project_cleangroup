@@ -6,6 +6,7 @@ src/sass
 /.pnp
 /.idea
 .pnp.js
+src/server.php
 
 # testing
 /coverage
