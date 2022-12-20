@@ -87,18 +87,22 @@ window.addEventListener('DOMContentLoaded', () => {
 
 	// Burger
 
-	const openMobileMenuBtn = document.querySelector(".device-menu");
-	const headerMenu = document.querySelector(".header-nav");
+	const burger = document.querySelector('.burger'),
+		menu = document.querySelector('.mobile-menu'),
+		menuItem = document.querySelectorAll('.mobile-menu-body li');
 
-	openMobileMenuBtn.addEventListener("click", () => {
-		if(openMobileMenuBtn.classList.contains("open")) {
-			openMobileMenuBtn.classList.remove("open");
-			headerMenu.classList.remove("active");
-		} else {
-			headerMenu.classList.add("active");
-			openMobileMenuBtn.classList.add("open");
-		}
-	})
+	burger.addEventListener('click', () => {
+		menu.classList.toggle('active');
+		burger.classList.toggle('active');
+	});
+
+	menuItem.forEach(item => {
+		item.addEventListener('click', () => {
+			menu.classList.toggle('active');
+			burger.classList.toggle('active-burger');
+		});
+	});
+
 
 
 	// Swiper
