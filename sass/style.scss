@@ -27,7 +27,7 @@ a {
 
 body {
   min-width: 320px;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
   font-family: 'Open Sans', 'Arial', sans-serif;
   font-weight: 500;
   font-style: normal;
