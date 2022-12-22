@@ -25,10 +25,17 @@ a {
   transition: .2s ease-out;
 }
 
+html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
 
 body {
-  min-width: 320px;
+  width: 100%;
+  max-width: 100%;
   overflow-x: hidden;
+  min-width: 320px;
   font-family: 'Open Sans', 'Arial', sans-serif;
   font-weight: 500;
   font-style: normal;
