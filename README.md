@@ -36,11 +36,11 @@
 <br>
 - PHP;
 <br>
-- Figma/Photoshop
+- Figma/Photoshop;
 <br>
-- Webpack (dist-версия)
+- Webpack (dist-версия);
 <br>
-- Git
+- Git.
 
 
 
