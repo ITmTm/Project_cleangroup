@@ -1,0 +1,50 @@
+.cookies {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: -100%;
+  padding: 0.7rem 2rem;
+  background-color: #f8f8f8de;
+  width: 100%;
+  line-height: 1.4;
+  box-shadow: 2px 6px 2px 0 #c4b4b4,
+  0 -1px 5px 0 rgba(213, 195, 195, 0.8);
+  transition: .7s ease-in-out;
+  &__text {
+    color: #333333;
+    font-size: 16px;
+    font-weight: 500;
+    span {
+      font-size: 13px;
+      color: #a78a8a;
+      font-weight: 500;
+    }
+  }
+  &__btn {
+    padding: 5px 10px;
+    background-color: #888;
+    border-radius: 2px;
+    font-size: 15px;
+    line-height: 25px;
+    font-weight: 400;
+    color: #ffd9d9;
+    border: none;
+    transition: .4s ease-in-out;
+    &:hover {
+      background-color: #9d9999;
+      color: #fffcfc;
+      transition: .5s ease-in-out;
+    }
+  }
+  &__mrg {
+    margin-right: 10px;
+  }
+}
+
+.cookies_active {
+  bottom: 0;
+  transition: .7s ease-in-out;
+}
