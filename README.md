@@ -37,6 +37,10 @@
 - PHP;
 <br>
 - Figma/Photoshop
+<br>
+- Webpack (dist-версия)
+<br>
+- Git
 
 
 
