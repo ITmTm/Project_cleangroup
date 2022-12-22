@@ -359,7 +359,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 				this.bindTriggers();
 			} catch (e) {
-				console.error('Переданы не все данные');
+				// console.error('Переданы не все данные');
 			}
 		}
 	}
