@@ -1,0 +1,44 @@
+.proposal {
+  padding: 60px 0;
+  min-height: 260px;
+  background-color: rgba(3, 12, 14, 0.81);
+  .title {
+    color: #ffffff9e;
+    text-align: center;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 54px;
+    text-transform: uppercase;
+  }
+  &__counter {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 50px;
+    align-items: flex-end;
+  }
+  &__count {
+    display: flex;
+    padding-bottom: 30px;
+  }
+  &__number {
+    color: #b0b0d7;
+    font-size: 55px;
+    font-weight: 600;
+    letter-spacing: 5px;
+  }
+  &__plus {
+    color: #b0b0d7;
+    font-size: 55px;
+    font-weight: 500;
+    padding-left: 10px;
+  }
+  &__descr {
+    color: #b0b0d7;
+    font-size: 35px;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 45px;
+    width: 20%;
+  }
+}
+
