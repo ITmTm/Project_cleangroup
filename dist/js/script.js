@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', () => {
-
+	'use strict';
 
 	let time = 15000; //ms
 	let step = 5;
@@ -99,7 +99,7 @@ window.addEventListener('DOMContentLoaded', () => {
 	menuItem.forEach(item => {
 		item.addEventListener('click', () => {
 			menu.classList.toggle('active');
-			burger.classList.toggle('active-burger');
+			burger.classList.remove('active');
 		});
 	});
 
@@ -359,7 +359,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 				this.bindTriggers();
 			} catch (e) {
-				console.error('Переданы не все данные');
+				// console.error('Переданы не все данные');
 			}
 		}
 	}
